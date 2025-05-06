@@ -40,7 +40,7 @@ const NewArrival: React.FC = () => {
 
     return (
         <div className="container pb-2">
-            <ul className="pt-5 d-flex gap-3 arr-header">
+            <ul className="new-ul pt-5 d-flex gap-3 arr-header">
                 <li
                     className={`fs-5 list-unstyled ${selectedTag === 'new' ? 'activ-header text-black' : 'text-secondary'}`}
                     onClick={() => setSelectedTag('new')}

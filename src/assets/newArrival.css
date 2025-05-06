@@ -1,4 +1,4 @@
-ul{
+.new-ul{
     display: flex;
     gap: 3em;
     list-style: none;
