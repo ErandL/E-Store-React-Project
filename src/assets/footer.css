@@ -1,0 +1,50 @@
+.last-banner{
+    background: url("https://i.ibb.co/4n2ZJmJW/banner.jpg") no-repeat center;
+    background-size: cover;
+    height: 450px;
+    min-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.last-banner-text{
+    display: flex  ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.last-banner-text p{
+    color: #787878;
+}
+
+.icons-holder{
+    display: flex;
+    gap: 30px;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 70px;
+    padding: 70px 35px;
+}
+
+@media (max-width: 768px) {
+    .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container{
+        grid-template-columns: 1fr;
+    }
+}

@@ -70,9 +70,9 @@ const NewArrival: React.FC = () => {
                             <i className="fa-regular fa-heart fs-3"></i>
                         </div>
                         <img className='rounded-circle' src={product.image} alt={product.name} width={"45%"} />
-                        <h5 className='text-center mt-3'>{product.name}</h5>
+                        <h5 className='text-center mt-5'>{product.name}</h5>
                         <span className='text-center'>{product.description}</span>
-                        <p className='text-center mb-0 pb-0'>Price: ${product.price}</p>
+                        <p className='text-center mb-0 pb-0 flex-grow-1'>Price: ${product.price}</p>
                         <ShopNowBtn text="Buy Now" className="text-white bg-black w-fit py-2" />
                     </div>
                 ))}
