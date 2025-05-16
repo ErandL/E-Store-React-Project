@@ -1,4 +1,15 @@
 .products-page-body{
     display: grid;
-    grid-template-columns: "sidebar mainbody";
+    grid-template-columns: 20% 70%;
+}
+
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+#rating{
+    width: 200px;
+    padding: 4px 4px;
 }
