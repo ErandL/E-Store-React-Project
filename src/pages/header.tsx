@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <nav className='d-flex gap-5 justify-content-between justify-content-xl-center align-items-center p-4'>
       <div className='p-0 m-0 d-flex gap-5 align-items-center'>
-        <h2 style={{ cursor: 'pointer' }}>E-Store</h2>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}><h2 style={{ cursor: 'pointer' }}>E-Store</h2></Link>
         <Input className="d-none d-lg-inline"></Input>
       </div>
       <ul className='d-none d-xl-flex'>

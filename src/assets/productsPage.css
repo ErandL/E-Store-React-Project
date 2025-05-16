@@ -13,3 +13,46 @@
     width: 200px;
     padding: 4px 4px;
 }
+
+#brands-ul{
+    height: fit-content;
+    max-height: 350px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    padding-right: 5px;
+}
+
+.rotate-right {
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+
+.rotate-down {
+    transform: rotate(90deg);
+    transition: transform 0.2s;
+}
+
+
+.category-input{
+    position: relative;
+}
+
+.category-input input{
+    background-color: #F5F5F5;
+    padding-left: 2.2rem;
+    color: #656565;
+}
+
+.category-input input:focus{
+    background-color: #F5F5F5;
+    color: #656565;
+}
+
+.category-input i{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #acacac;
+}

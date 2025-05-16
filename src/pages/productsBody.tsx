@@ -30,6 +30,7 @@ function ProductsBody() {
     const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
     const [selectedRating, setSelectedRating] = useState<number | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
+    const [brandSearch, setBrandSearch] = useState('');
     const productsPerPage = 9;
 
     const { products: allProducts, loading, error } = useProducts();
@@ -43,6 +44,12 @@ function ProductsBody() {
         : allProducts;
 
     const brands = [...new Set(categoryFilteredProducts.map(product => product.brand))].sort();
+
+    const filteredBrands = brands.filter(brand =>
+        brand.toLowerCase().includes(brandSearch.toLowerCase())
+    );
+
+    const [isBrandOpen, setIsBrandOpen] = useState(false);
 
     const brandFilteredProducts = selectedBrands.length > 0
         ? categoryFilteredProducts.filter(product => selectedBrands.includes(product.brand))
@@ -77,7 +84,6 @@ function ProductsBody() {
         }
     };
 
-    // Reset to page 1 when filters or category changes
     useEffect(() => {
         setCurrentPage(1);
     }, [selectedBrands, selectedRating, selectedCategory]);
@@ -88,29 +94,53 @@ function ProductsBody() {
             <div className="products-page-body">
                 <div className="products-page-side-menu">
                     <div className="brand-dropdown">
-                        <div className='d-flex justify-content-between align-items-center border-bottom mb-3'>
-                            <h5 className='text-center'>Brand</h5>
-                            <span>&gt;</span>
+                        <div
+                            className='d-flex justify-content-between align-items-center border-bottom mb-3'
+                            onClick={() => setIsBrandOpen(prev => !prev)}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <h5 className='text-center m-0'>Brand</h5>
+                            <span className={`fs-5 ${isBrandOpen ? 'rotate-down' : 'rotate-right'}`}>&gt;</span>
                         </div>
-                        {loading ? (
-                            <p>Loading brands...</p>
-                        ) : error ? (
-                            <p>Error loading brands</p>
-                        ) : (
-                            <ul className='d-flex flex-column gap-3 p-0 m-0'>
-                                {brands.map((brand) => (
-                                    <li key={brand} style={{ listStyle: 'none' }}>
-                                        <label className='d-flex align-items-center gap-2'>
+
+                        {isBrandOpen && (
+                            loading ? (
+                                <p>Loading brands...</p>
+                            ) : error ? (
+                                <p>Error loading brands</p>
+                            ) : (
+                                <ul id='brands-ul' className='d-flex flex-column gap-3 p-0 m-0'>
+                                    <li style={{ listStyle: 'none', paddingRight: '1rem' }}>
+                                        <div className="category-input">
                                             <input
-                                                type="checkbox"
-                                                checked={selectedBrands.includes(brand)}
-                                                onChange={() => handleBrandToggle(brand)}
+                                                type="text"
+                                                placeholder="Search"
+                                                value={brandSearch}
+                                                onChange={(e) => setBrandSearch(e.target.value)}
+                                                className="form-control"
                                             />
-                                            {brand}
-                                        </label>
+                                            <i className="fa-solid fa-magnifying-glass"></i>
+                                        </div>
                                     </li>
-                                ))}
-                            </ul>
+
+                                    {filteredBrands.length > 0 ? (
+                                        filteredBrands.map((brand) => (
+                                            <li key={brand} style={{ listStyle: 'none' }}>
+                                                <label className='d-flex align-items-center gap-2'>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={selectedBrands.includes(brand)}
+                                                        onChange={() => handleBrandToggle(brand)}
+                                                    />
+                                                    {brand}
+                                                </label>
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <li style={{ listStyle: 'none', opacity: 0.6 }}>No matching brands</li>
+                                    )}
+                                </ul>
+                            )
                         )}
                     </div>
                 </div>
@@ -121,7 +151,7 @@ function ProductsBody() {
                             Selected Products: <span className='fw-bold'>{finalFilteredProducts.length}</span>
                         </p>
                         <div className="rating-filter">
-                            <select id="rating" className='ms-2 rounded' onChange={handleRatingChange} value={selectedRating ?? ''}>
+                            <select id="rating" className='ms-2 rounded border-secondary-subtle' onChange={handleRatingChange} value={selectedRating ?? ''}>
                                 <option value="">By Rating</option>
                                 <option value="4">4 Stars & Up</option>
                                 <option value="3">3 Stars & Up</option>
@@ -161,7 +191,6 @@ function ProductsBody() {
                                 )}
                             </div>
 
-                            {/* Pagination Controls */}
                             {totalPages > 1 && (
                                 <div className="d-flex justify-content-center align-items-center gap-2 mt-4">
                                     <button
