@@ -1,5 +1,6 @@
 import "../index.css"
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function BrowseByCategory() {
 
@@ -30,30 +31,42 @@ export default function BrowseByCategory() {
         scrollBehavior: 'smooth',
         scrollSnapType: 'x mandatory'
       }}>
-        <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
-          <img src="https://i.ibb.co/FbmpQF1L/Phones.png" alt="Phones" />
-          <span>Phones</span>
-        </div>
-        <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
-          <img src="https://i.ibb.co/PZgnRY9t/Smart-Watches.png" alt="Smart-Watches" />
-          <span>Smart Watches</span>
-        </div>
-        <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
-          <img src="https://i.ibb.co/JWJ6BPsR/Cameras.png" alt="Cameras" />
-          <span>Cameras</span>
-        </div>
-        <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
-          <img src="https://i.ibb.co/ZpcBPGVb/Headphones.png" alt="Headphones" />
-          <span>Headphones</span>
-        </div>
-        <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
-          <img src="https://i.ibb.co/gZHg9q4R/Computers.png" alt="Computers" />
-          <span>Computers</span>
-        </div>
-        <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
-          <img src="https://i.ibb.co/d48PZLdd/Gaming.png" alt="Gaming" />
-          <span>Gaming</span>
-        </div>
+        <Link to={`/products?category=phones`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
+            <img src="https://i.ibb.co/FbmpQF1L/Phones.png" alt="Phones" />
+            <span>Phones</span>
+          </div>
+        </Link>
+        <Link to={`/products?category=Smart Watches`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
+            <img src="https://i.ibb.co/PZgnRY9t/Smart-Watches.png" alt="Smart-Watches" />
+            <span>Smart Watches</span>
+          </div>
+        </Link>
+        <Link to={`/products?category=Cameras`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
+            <img src="https://i.ibb.co/JWJ6BPsR/Cameras.png" alt="Cameras" />
+            <span>Cameras</span>
+          </div>
+        </Link>
+        <Link to={`/products?category=Headphones`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
+            <img src="https://i.ibb.co/ZpcBPGVb/Headphones.png" alt="Headphones" />
+            <span>Headphones</span>
+          </div>
+        </Link>
+        <Link to={`/products?category=Computers`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
+            <img src="https://i.ibb.co/gZHg9q4R/Computers.png" alt="Computers" />
+            <span>Computers</span>
+          </div>
+        </Link>
+        <Link to={`/products?category=Tablets`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="cards p-2 rounded-4 d-flex flex-column justify-content-center align-items-center" style={{ cursor: 'pointer', scrollSnapAlign: 'start' }}>
+            <img src="https://i.ibb.co/d48PZLdd/Gaming.png" alt="Gaming" />
+            <span>Gaming</span>
+          </div>
+        </Link>
       </div>
     </div>
   )

@@ -1,0 +1,4 @@
+.products-page-body{
+    display: grid;
+    grid-template-columns: "sidebar mainbody";
+}

@@ -1,6 +1,7 @@
 import Input from '../components/input'
 import '../index.css'
 import SideMenu from '../components/sideMenu'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -10,10 +11,10 @@ export default function Header() {
         <Input className="d-none d-lg-inline"></Input>
       </div>
       <ul className='d-none d-xl-flex'>
-        <li className='active-nav-li'><a href="#" className='text-decoration-none text-black fs-5'>Home</a></li>
-        <li><a href="#" className='text-decoration-none text-black fs-5'>About</a></li>
-        <li><a href="#" className='text-decoration-none text-black fs-5'>Contact Us</a></li>
-        <li><a href="#" className='text-decoration-none text-black fs-5'>Blog</a></li>
+        <Link to="/" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Home</li></Link>
+        <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Catalog</li></Link>
+        <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>About</li></Link>
+        <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Contact Us</li></Link>
       </ul>
       <div className='d-none d-xl-flex gap-3 justify-content-center align-items-center fs-5 cart'>
         <i className="fa-regular fa-heart"></i>
