@@ -5,6 +5,23 @@
   font-family: 'Inter', sans-serif;
 }
 
+nav{
+  border-bottom: 1px solid #bab9b9;
+}
+
+img, a, a * {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
@@ -19,6 +36,10 @@ nav ul{
   padding: 0;
   margin: 0;
   color: gray;
+}
+
+a {
+  text-decoration: none;
 }
 
 .active-nav-li{

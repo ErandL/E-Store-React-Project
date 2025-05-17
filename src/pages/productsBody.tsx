@@ -3,10 +3,11 @@ import { useLocation } from 'react-router-dom';
 import "../assets/productsPage.css";
 import { useProducts } from '../hooks/useProducts';
 import ShopNowBtn from '../components/shopNowBtn';
+import { Link } from 'react-router-dom';
 
 function Breadcrumb({ category }: { category: string | null }) {
     return (
-        <div className="breadcrumb d-flex gap-2 mb-4">
+        <div className="breadcrumb d-none d-md-flex gap-2 mb-4">
             <span style={{ opacity: 0.6 }}>Home</span>
             <span>&gt;</span>
             <span style={{ opacity: 0.6 }}>Catalogue</span>
@@ -89,7 +90,7 @@ function ProductsBody() {
     }, [selectedBrands, selectedRating, selectedCategory]);
 
     return (
-        <div className='px-5 pt-2 pb-5'>
+        <div className='px-sm-5 px-3 pt-4 pb-5'>
             <Breadcrumb category={selectedCategory} />
             <div className="products-page-body">
                 <div className="products-page-side-menu">
@@ -145,13 +146,13 @@ function ProductsBody() {
                     </div>
                 </div>
 
-                <div className="products-page-main-menu px-4">
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                        <p className='fw-light'>
+                <div className="products-page-main-menu px-sm-5 px-3 mt-5 mt-md-0">
+                    <div className="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center mb-3 gap-3">
+                        <p className='fw-light m-0 p-0'>
                             Selected Products: <span className='fw-bold'>{finalFilteredProducts.length}</span>
                         </p>
-                        <div className="rating-filter">
-                            <select id="rating" className='ms-2 rounded border-secondary-subtle' onChange={handleRatingChange} value={selectedRating ?? ''}>
+                        <div className="rating-filter p-0 m-sm-0 mb-3">
+                            <select id="rating" className='m-0 rounded border-secondary-subtle' onChange={handleRatingChange} value={selectedRating ?? ''}>
                                 <option value="">By Rating</option>
                                 <option value="4">4 Stars & Up</option>
                                 <option value="3">3 Stars & Up</option>
@@ -170,21 +171,27 @@ function ProductsBody() {
                             <div className="products-grid">
                                 {paginatedProducts.length > 0 ? (
                                     paginatedProducts.map(product => (
-                                        <div key={product.id} className='cards-arr d-flex flex-column align-items-center p-4'>
-                                            <div className="w-100 d-flex justify-content-end">
-                                                <i className="fa-regular fa-heart fs-3"></i>
+                                        <Link
+                                            key={product.id}
+                                            to={`/product/${product.id}`}
+                                            className="text-decoration-none text-dark"
+                                        >
+                                            <div key={product.id} className='cards-arr d-flex flex-column align-items-center p-4'>
+                                                <div className="w-100 d-flex justify-content-end">
+                                                    <i className="fa-regular fa-heart fs-3"></i>
+                                                </div>
+                                                <img
+                                                    className='rounded-circle'
+                                                    src={product.image}
+                                                    alt={product.name}
+                                                    width={"45%"}
+                                                />
+                                                <h5 className='text-center mt-5'>{product.name}</h5>
+                                                <span className='text-center'>{product.description}</span>
+                                                <p className='text-center mb-0 pb-0 flex-grow-1'>Price: ${product.price}</p>
+                                                <ShopNowBtn text="Buy Now" className="text-white bg-black w-fit py-2" />
                                             </div>
-                                            <img
-                                                className='rounded-circle'
-                                                src={product.image}
-                                                alt={product.name}
-                                                width={"45%"}
-                                            />
-                                            <h5 className='text-center mt-5'>{product.name}</h5>
-                                            <span className='text-center'>{product.description}</span>
-                                            <p className='text-center mb-0 pb-0 flex-grow-1'>Price: ${product.price}</p>
-                                            <ShopNowBtn text="Buy Now" className="text-white bg-black w-fit py-2" />
-                                        </div>
+                                        </Link>
                                     ))
                                 ) : (
                                     <p>No products found matching your filters.</p>
