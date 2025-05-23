@@ -18,7 +18,7 @@ export default function Header() {
       </ul>
       <div className='d-none d-xl-flex gap-3 justify-content-center align-items-center fs-5 cart'>
         <i className="fa-regular fa-heart"></i>
-        <i className="fa-solid fa-cart-shopping"></i>
+        <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}><i className="fa-solid fa-cart-shopping"></i></Link>
         <i className="fa-regular fa-user"></i>
       </div>
       <SideMenu></SideMenu>

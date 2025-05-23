@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
 import ShopNowBtn from '../components/shopNowBtn';
+import AddToCartBtn from '../components/addToCartBtn';
 import Header from './header';
 import Footer from './footer';
 import ReviewForm from '../components/reviewForm';
@@ -95,8 +96,19 @@ function SingleProduct() {
                                 })}
                             </p>
                         )}
-
-                        <ShopNowBtn text="Buy Now" className="text-white bg-black py-2 px-4 mt-3 w-fit" />
+                        <div
+                            className="container d-flex flex-column flex-md-row gap-2 gap-md-5 justify-content-md-start align-items-md-start align-items-center justify-content-center">
+                            <ShopNowBtn text="Buy Now" className="text-white bg-black py-2 px-4 mt-3 w-fit" />
+                            <AddToCartBtn
+                                text="Add to Cart"
+                                product={{
+                                    id: product.id,
+                                    name: product.name,
+                                    price: product.price,
+                                    image: product.image,
+                                }}
+                                className="text-black bg-white border-black py-2 px-4" />
+                        </div>
                     </div>
                 </div>
 

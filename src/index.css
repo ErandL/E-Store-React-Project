@@ -170,6 +170,21 @@ nav ul li{
   scrollbar-width: none;
 }
 
+.cart-quantity{
+  width: 100px;
+  overflow: hidden;
+  text-align: end;
+}
+
+.card-bonus{
+  position: relative;
+}
+.card-bonus button{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
 @media (max-width: 450px) {
   .input-basic{
     position: relative;
