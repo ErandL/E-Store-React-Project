@@ -59,7 +59,7 @@
 
 .single-card img{
     width: 30%;
-    max-height: 405px;
+    max-height: 355px;
     height: auto;
 }
 
@@ -71,7 +71,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
     .single-card img{
-    width: 80%;
+    width: 80% !important;
     }
 }
 @media (max-width: 480px) {
