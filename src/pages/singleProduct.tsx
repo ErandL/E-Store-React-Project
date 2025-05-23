@@ -22,6 +22,8 @@ function SingleProduct() {
 
     const [localReviews, setLocalReviews] = useState<Review[]>([]);
 
+    const [showReviewForm, setShowReviewForm] = useState(false);
+
     useEffect(() => {
         if (product && product.reviews) {
             setLocalReviews(product.reviews);
@@ -119,8 +121,29 @@ function SingleProduct() {
                     <p className="mt-4 text-muted">No reviews yet.</p>
                 )}
 
-                <ReviewForm onSubmit={(newReview: Review) => setLocalReviews([newReview, ...localReviews])} />
-            </div>
+                <div
+                    onClick={() => setShowReviewForm(prev => !prev)}
+                    className="d-flex align-items-center justify-content-between border rounded px-3 py-2 mt-5 bg-white cursor-pointer"
+                    style={{ cursor: 'pointer' }}
+                >
+                    <h5 className="mb-0">Write a Review</h5>
+                    <span
+                        className="transition-transform"
+                        style={{
+                            transform: showReviewForm ? 'rotate(90deg)' : 'rotate(0deg)',
+                            transition: 'transform 0.3s ease',
+                        }}
+                    >
+                        &gt;
+                    </span>
+                </div>
+
+                {showReviewForm && (
+                    <div className="mt-3">
+                        <ReviewForm onSubmit={(newReview: Review) => setLocalReviews([newReview, ...localReviews])} />
+                    </div>
+                )}
+            </div >
 
             <Footer />
         </>

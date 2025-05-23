@@ -171,27 +171,24 @@ function ProductsBody() {
                             <div className="products-grid">
                                 {paginatedProducts.length > 0 ? (
                                     paginatedProducts.map(product => (
-                                        <Link
-                                            key={product.id}
-                                            to={`/product/${product.id}`}
-                                            className="text-decoration-none text-dark"
-                                        >
-                                            <div key={product.id} className='cards-arr d-flex flex-column align-items-center p-4'>
-                                                <div className="w-100 d-flex justify-content-end">
-                                                    <i className="fa-regular fa-heart fs-3"></i>
-                                                </div>
-                                                <img
-                                                    className='rounded-circle'
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    width={"45%"}
-                                                />
+
+                                        <div key={product.id} className='cards-arr d-flex flex-column align-items-center p-4'>
+                                            <div className="w-100 d-flex justify-content-end">
+                                                <i className="fa-regular fa-heart fs-3"></i>
+                                            </div>
+                                            <img
+                                                className='rounded-circle'
+                                                src={product.image}
+                                                alt={product.name}
+                                                width={"45%"}
+                                            />
+                                            <Link key={product.id} to={`/product/${product.id}`} className="text-decoration-none lh-base text-dark text-center mb-2">
                                                 <h5 className='text-center mt-5'>{product.name}</h5>
                                                 <span className='text-center'>{product.description}</span>
-                                                <p className='text-center mb-0 pb-0 flex-grow-1'>Price: ${product.price}</p>
-                                                <ShopNowBtn text="Buy Now" className="text-white bg-black w-fit py-2" />
-                                            </div>
-                                        </Link>
+                                            </Link>
+                                            <p className='text-center mb-0 pb-0 flex-grow-1'>Price: ${product.price}</p>
+                                            <ShopNowBtn text="Buy Now" className="text-white bg-black w-fit py-2" />
+                                        </div>
                                     ))
                                 ) : (
                                     <p>No products found matching your filters.</p>
@@ -229,7 +226,7 @@ function ProductsBody() {
                     )}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

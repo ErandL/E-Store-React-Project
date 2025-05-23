@@ -20,7 +20,6 @@ function ReviewForm({ onSubmit }: ReviewFormProps) {
 
     return (
         <form className="review-form mt-4" onSubmit={handleSubmit}>
-            <h5 className="mb-3">Write a Review</h5>
             <div className="mb-3">
                 <label className="form-label">Name</label>
                 <input
