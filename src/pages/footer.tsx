@@ -7,10 +7,10 @@ export default function Footer() {
                 <p style={{ cursor: 'pointer' }} className="fs-2 fw-bold">E-Store</p>
                 <p className="flex-grow-1 fw-lighter">We are a residential interior design firm located in Portland. Our boutique-studio offers more than the average store ! <br /> Welcome   </p>
                 <div className="icons-holder">
-                    <i style={{ cursor: 'pointer' }} className="fa-brands fa-x-twitter fs-5"></i>
-                    <i style={{ cursor: 'pointer' }} className="fa-brands fa-facebook-f fs-5"></i>
-                    <i style={{ cursor: 'pointer' }} className="fa-brands fa-tiktok fs-5"></i>
-                    <i style={{ cursor: 'pointer' }} className="fa-brands fa-instagram fs-5" ></i>
+                    <a href="https://x.com/" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}><i style={{ cursor: 'pointer' }} className="fa-brands fa-x-twitter fs-5"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}><i style={{ cursor: 'pointer' }} className="fa-brands fa-facebook-f fs-5"></i></a>
+                    <a href="https://www.betterhelp.com/" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}><i style={{ cursor: 'pointer' }} className="fa-brands fa-tiktok fs-5"></i></a>
+                    <a href="https://www.instagram.com/erand.lika/" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}><i style={{ cursor: 'pointer' }} className="fa-brands fa-instagram fs-5"></i></a>
                 </div>
             </div>
             <div className="d-flex flex-column">

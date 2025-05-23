@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light only;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -190,6 +194,10 @@ nav ul li{
     position: relative;
     width: 100%;
   }
+  .card-bonus button{
+  position: static;
+  margin-top: 10px;
+}
 }
 
 @media (max-width: 991px) {
