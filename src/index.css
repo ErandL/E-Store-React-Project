@@ -1,8 +1,5 @@
-#root {
-  color-scheme: light only;
-}
-
 * {
+  color-scheme: light only;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -262,4 +259,16 @@ nav ul li{
       width: 50vw;
     }
   }
+}
+
+.input-basic {
+  position: relative;
+}
+
+.search-suggestions {
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 4px;
+  gap: 0 !important;
 }
