@@ -13,8 +13,8 @@ export default function Header() {
       <ul className='d-none d-xl-flex'>
         <Link to="/" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Home</li></Link>
         <Link to="/catalog" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Catalog</li></Link>
-        <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>About</li></Link>
-        <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Contact Us</li></Link>
+        <Link to="/about-us" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>About</li></Link>
+        <Link to="/contact-us" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Contact Us</li></Link>
       </ul>
       <div className='d-none d-xl-flex gap-3 justify-content-center align-items-center fs-5 cart'>
         <i className="fa-regular fa-heart"></i>

@@ -1,6 +1,7 @@
 import { useProducts } from '../hooks/useProducts';
 import ShopNowBtn from '../components/shopNowBtn';
 import { CircularProgress } from '@mui/material';
+import { Link } from 'react-router-dom';
 import "../assets/newArrival.css"
 
 
@@ -35,8 +36,10 @@ const DiscountsBundle = () => {
                             <i className="fa-regular fa-heart fs-3"></i>
                         </div>
                         <img className='rounded-circle' src={product.image} alt={product.name} width={"45%"} />
-                        <h5 className='text-center mt-5'>{product.name}</h5>
-                        <span className='text-center'>{product.description}</span>
+                        <Link key={product.id} to={`/product/${product.id}`} className="text-decoration-none lh-base text-dark text-center mb-2">
+                            <h5 className='text-center mt-5'>{product.name}</h5>
+                            <span className='text-center'>{product.description}</span>
+                        </Link>
                         <p className='text-center mb-0 pb-0 flex-grow-1'>Price: ${product.price}</p>
                         <ShopNowBtn text="Buy Now" className="text-white bg-black w-fit py-2" />
                     </div>

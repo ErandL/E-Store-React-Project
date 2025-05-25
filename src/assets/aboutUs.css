@@ -1,0 +1,33 @@
+.about-us-container {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-us-content {
+  max-width: 800px;
+  width: 100%;
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-us-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.about-us-content p {
+  margin-bottom: 1rem;
+}
+
+.about-us-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.about-us-content a:hover {
+  text-decoration: underline;
+}

@@ -27,8 +27,8 @@ const SideMenu = () => {
                         <ul className='d-flex flex-column p-0 m-0 gap-3'>
                             <Link to="/" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Home</li></Link>
                             <Link to="/catalog" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Catalog</li></Link>
-                            <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>About</li></Link>
-                            <Link to="/#" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Contact Us</li></Link>
+                            <Link to="/about-us" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>About</li></Link>
+                            <Link to="/contact-us" style={{ textDecoration: 'none' }}><li className='text-black fs-5'>Contact Us</li></Link>
                         </ul>
                         <Input className="d-inline"></Input>
                         <div className='d-flex gap-4 justify-content-start align-items-center mt-3 fs-5 cart'>
